@@ -1,6 +1,5 @@
 package Builders;
 import Domain.Gender;
-import Domain.Warrior;
 import Domain.Wizard;
 import java.util.List;
 

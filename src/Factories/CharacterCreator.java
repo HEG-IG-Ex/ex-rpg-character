@@ -1,17 +1,11 @@
 package Factories;
-
-import Builders.BowmanBuilder;
 import Builders.Builder;
-import Builders.WarriorBuilder;
-import Builders.WizardBuilder;
 import Domain.Class;
-import Domain.Gender;
-import Domain.Warrior;
 
-public class Game {
+public class CharacterCreator {
     CharacterBuilderFactory factory;
 
-    public Game() {
+    public CharacterCreator() {
     }
 
     public Builder createNewCharacterBuilder(Class type){

@@ -1,24 +1,20 @@
-import Builders.BowmanBuilder;
 import Builders.Builder;
-import Builders.WarriorBuilder;
-import Builders.WizardBuilder;
 import Domain.*;
 import Domain.Class;
-import Factories.Game;
-
+import Factories.CharacterCreator;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Main {
 
 
     public static void main(String[] args) {
-        Game game = new Game();
+        CharacterCreator creator = new CharacterCreator();
 
         // WARRIOR
 
         // Pre config Warrior
-        Builder warBuilder = game.createNewCharacterBuilder(Class.WARRIOR);
+        Builder warBuilder = creator.createNewCharacterBuilder(Class.WARRIOR);
         // Custom Attributes
         warBuilder.setPhysicalAttributes(new ArrayList<>());
         // Finalize
@@ -30,7 +26,7 @@ public class Main {
 
         // WIZARD
 
-        Builder wizBuilder = game.createNewCharacterBuilder(Class.WIZARD);
+        Builder wizBuilder = creator.createNewCharacterBuilder(Class.WIZARD);
         wizBuilder.setPhysicalAttributes(new ArrayList<>());
         Wizard wizard = (Wizard) wizBuilder.build();
         wizard.buyEquipment(new Equipment(40, "Sceptre"));
@@ -38,7 +34,7 @@ public class Main {
 
         // BOWMAN
 
-        Builder bowBuilder = game.createNewCharacterBuilder(Class.BOWMAN);
+        Builder bowBuilder = creator.createNewCharacterBuilder(Class.BOWMAN);
         bowBuilder.setPhysicalAttributes(new ArrayList<>());
         Bowman bowman = (Bowman) bowBuilder.build();
         bowman.buyEquipment(new Equipment(30, "Arc"));
