@@ -9,6 +9,6 @@ public class Wizard extends Character implements AttackStrategy{
 
     @Override
     public void attack() {
-
+        System.out.println("Cast a spell !");
     }
 }

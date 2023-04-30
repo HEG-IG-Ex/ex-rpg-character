@@ -5,24 +5,25 @@ import Builders.Builder;
 import Builders.WarriorBuilder;
 import Builders.WizardBuilder;
 import Domain.Class;
+import Domain.Gender;
+import Domain.Warrior;
 
 public class Game {
     CharacterBuilderFactory factory;
 
     public Game() {
-        this.factory = new CharacterBuilderFactory();
     }
 
-    public Builder createNewCharacter(Class type){
+    public Builder createNewCharacterBuilder(Class type){
         switch (type) {
             case WARRIOR:
-                return new WarriorBuilder();
+                return factory.getInstance().createWarriorBuilder();
 
             case WIZARD:
-                return new WizardBuilder();
+                return factory.getInstance().createWizardBuilder();
 
             case BOWMAN:
-                return new BowmanBuilder();
+                return factory.getInstance().createBowmanBuilder();
         }
         return null;
     }

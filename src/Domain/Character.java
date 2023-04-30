@@ -1,5 +1,5 @@
 package Domain;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Character {
@@ -10,6 +10,7 @@ public abstract class Character {
     private List<Object> physicalAttributes;
 
     private int credit;
+    private List<Equipment> equipments;
 
     private int force;
     private int dexterity;
@@ -29,6 +30,7 @@ public abstract class Character {
         this.endurance = endurance;
         this.speed = speed;
         this.constitution = constitution;
+        equipments = new ArrayList<>();
     }
 
     public String getName() {
@@ -109,5 +111,11 @@ public abstract class Character {
 
     public void setConstitution(int constitution) {
         this.constitution = constitution;
+    }
+
+    public void buyEquipment(Equipment e){
+        credit -= e.getPrice();
+        equipments.add(e);
+
     }
 }
